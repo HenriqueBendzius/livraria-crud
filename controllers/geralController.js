@@ -1,7 +1,12 @@
+const livrosServices = require('../Services/livrosServices')
+
 const geralController = {
     showHome: (req, res) => {
-        res.render("home")
+
+        const livros = livrosServices.listarTodosLivros();
+        return res.render("home" ,{livros});
+
     }
 }
 
-module.exports = geralController
+module.exports = geralController;
